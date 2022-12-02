@@ -85,6 +85,8 @@
     - [ ]  자동차 이름 저장
     - [ ]  전진 위치를 0으로 초기화
 - [ ]  한 칸 전진시키기
+- [ ]  이름 반환
+    - [ ]  `Collections.unmodifiableList()`을 통해 외부에서 변경하지 못하도록 하기
 - [ ]  전진 위치 반환
     - [ ]  `Collections.unmodifiableList()`을 통해 외부에서 변경하지 못하도록 하기
 
