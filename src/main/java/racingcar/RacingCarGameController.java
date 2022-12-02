@@ -24,10 +24,37 @@ public class RacingCarGameController {
     }
 
     private List<String> inputCarNames() {
-       return splitCarNames(inputView.readCarNames());
+        try {
+            List<String> carNames = splitCarNames(inputView.readCarNames());
+            validateCarNames(carNames);
+            return carNames;
+        } catch (IllegalArgumentException exception) {
+            System.out.println(exception.getMessage());
+            return inputCarNames();
+        }
     }
 
     private List<String> splitCarNames(String carNames) {
         return Arrays.asList(carNames.split(COMMA));
+    }
+
+    private void validateCarNames(List<String> carNames) {
+        isNotEmpty(carNames);
+
+        for (String carName : carNames) {
+            isOverFive(carName);
+        }
+    }
+
+    private void isNotEmpty(List<String> carNames) {
+        if (carNames.get(0).isEmpty()) {
+            ExceptionMessage.NONE_INPUT_MESSAGE.throwException();
+        }
+    }
+
+    private void isOverFive(String carName) {
+        if (carName.length() > 5) {
+            ExceptionMessage.INPUT_NAME_LENGTH_MORE_THAN_FIVE_MESSAGE.throwException();
+        }
     }
 }
