@@ -119,7 +119,7 @@
 
 ## constants
 
-### RacingCarConstants
+### MovementState
 
 > 레이싱 게임에서 전진 혹은 멈추에 대한 상수들을 모아둔 enum 클래스
 
