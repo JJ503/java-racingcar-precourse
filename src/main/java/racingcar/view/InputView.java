@@ -6,10 +6,18 @@ import racingcar.validation.InputValidation;
 import java.util.List;
 
 public class InputView {
-    private static final String INPUT_RACING_CAR_NAMES = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
+    private static final String INPUT_RACING_CAR_NAMES
+            = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
+    private static final String INPUT_RACING_TRY_COUNT
+            = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
 
     public List<String> readRacingCarNames() {
         System.out.println(INPUT_RACING_CAR_NAMES);
         return InputValidation.validateCarNames(Console.readLine());
+    }
+
+    public String readRacingTryCount() {
+        System.out.println(INPUT_RACING_TRY_COUNT);
+        return Console.readLine();
     }
 }
