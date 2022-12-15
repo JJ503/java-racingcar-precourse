@@ -16,8 +16,8 @@ public class InputView {
         return InputValidation.validateCarNames(Console.readLine());
     }
 
-    public String readRacingTryCount() {
+    public Integer readRacingTryCount() {
         System.out.println(INPUT_RACING_TRY_COUNT);
-        return Console.readLine();
+        return InputValidation.validateTryCount(Console.readLine());
     }
 }
