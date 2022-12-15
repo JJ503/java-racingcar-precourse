@@ -43,7 +43,7 @@ public class InputValidation {
 
     private static void isMoreThanFive(int checkSize) {
         if (checkBetween1And5(checkSize)) {
-            ExceptionMessage.INPUT_NAME_MORE_THAN_FIVE.throwException();
+            ExceptionMessage.NOT_INPUT_NAME_BETWEEN_1AND5.throwException();
         }
     }
 
