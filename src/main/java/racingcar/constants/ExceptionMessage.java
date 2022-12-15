@@ -5,10 +5,11 @@ public enum ExceptionMessage {
     NOT_INPUT_NAME_BETWEEN_1AND5("자동차 이름의 길이는 1자 이상 5자 이하만 입력해 주시길 바랍니다."),
     NOT_INPUT_NUMBER("시도 횟수는 숫자여야 한다.");
 
+    private static final String ERROR_TAG = "[ERROR] ";
     private final String exceptionMessage;
 
     ExceptionMessage(String exceptionMessage) {
-        this.exceptionMessage = exceptionMessage;
+        this.exceptionMessage = ERROR_TAG + exceptionMessage;
     }
 
     public void throwException() {
