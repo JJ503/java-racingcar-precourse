@@ -18,4 +18,13 @@ public class Cars {
             car.addPosition(new GoOrStopValueGenerator().generate());
         }
     }
+
+    public List<List<Object>> getResult() {
+        List<List<Object>> result = new ArrayList<>();
+        for (Car car : cars) {
+            result.add(car.getCarInformation());
+        }
+
+        return result;
+    }
 }
