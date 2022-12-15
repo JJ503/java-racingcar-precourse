@@ -10,7 +10,7 @@ public class GoOrStopValueGenerator implements GoOrStopGenerator {
     @Override
     public MovementState generate() {
         return MovementState.getMovementState(
-                Randoms.pickNumberInRange(RANDOM_START_NUMBER,RANDOM_END_NUMBER)
+                Randoms.pickNumberInRange(RANDOM_START_NUMBER, RANDOM_END_NUMBER)
         );
     }
 }
