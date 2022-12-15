@@ -16,7 +16,7 @@ class InputValidationTest {
     @DisplayName("자동차 이름 입력 결과 테스트 - 정상 데이터 입력")
     @ValueSource(strings = {"pobi,woni,jun", "pobi, woni, jun", "pobi,woni, jun", "pobi,woni,jun,"})
     @ParameterizedTest
-    void validateNormalCarNames(String name) {
+    void validateNormalCarNamesTest(String name) {
         List<String> expectResult = Arrays.asList("pobi", "woni", "jun");
         assertThat(InputValidation.validateCarNames(name)).isEqualTo(expectResult);
     }
@@ -24,7 +24,7 @@ class InputValidationTest {
     @DisplayName("자동차 이름 입력 결과 테스트 - 비정상 데이터 입력")
     @ValueSource(strings = {"pobi,woni,junnnnnnn", "", "     "})
     @ParameterizedTest
-    void validateExceptionCarNames(String name) {
+    void validateExceptionCarNamesTest(String name) {
         assertThatThrownBy(() -> InputValidation.validateCarNames(name))
                 .isInstanceOf(IllegalArgumentException.class);
     }
@@ -32,14 +32,14 @@ class InputValidationTest {
     @DisplayName("시도 횟수 입력 결과 테스트 - 정상 데이터 입력")
     @CsvSource(value = {"5:5", "10:10", "15:15", "20:20"}, delimiter = ':')
     @ParameterizedTest
-    void validateNormalTryCount(String tryCount, int expectResult) {
+    void validateNormalTryCountTest(String tryCount, int expectResult) {
         assertThat(InputValidation.validateTryCount(tryCount)).isEqualTo(expectResult);
     }
 
     @DisplayName("시도 횟수 입력 결과 테스트 - 비정상 데이터 입력")
     @ValueSource(strings = {"", "     ", "2147483648", "sdf123", "sdfsdf"})
     @ParameterizedTest
-    void validateExceptionTryCount(String tryCount) {
+    void validateExceptionTryCountTest(String tryCount) {
         assertThatThrownBy(() -> InputValidation.validateTryCount(tryCount))
                 .isInstanceOf(IllegalArgumentException.class);
     }
