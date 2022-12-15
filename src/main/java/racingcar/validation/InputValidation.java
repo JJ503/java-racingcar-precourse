@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class InputValidation {
+    private static final int MAXIMUM_NAME_SIZE = 5;
+    private static final int MINIMUM_NAME_SIZE = 1;
     private static final String COMMA = ",";
     private static final String SPACE = " ";
     private static final String NONE = "";
@@ -40,9 +42,13 @@ public class InputValidation {
     }
 
     private static void isMoreThanFive(int checkSize) {
-        if (checkSize > 5) {
+        if (checkBetween1And5(checkSize)) {
             ExceptionMessage.INPUT_NAME_MORE_THAN_FIVE.throwException();
         }
+    }
+
+    private static boolean checkBetween1And5(int checkSize) {
+        return MINIMUM_NAME_SIZE <= checkSize && checkSize < MAXIMUM_NAME_SIZE;
     }
 
     private static Integer toNumber(String tryCount) {
