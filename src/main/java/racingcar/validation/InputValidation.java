@@ -15,6 +15,11 @@ public class InputValidation {
         return carNames;
     }
 
+    public static Integer validateTryCount(String tryCount) {
+        isExist(tryCount);
+        return toNumber(tryCount);
+    }
+
     private static void isExist(String checkValue) {
         if (checkValue.isEmpty()) {
             ExceptionMessage.NONE_INPUT.throwException();
@@ -35,5 +40,15 @@ public class InputValidation {
         if (checkSize > 5) {
             ExceptionMessage.INPUT_NAME_MORE_THAN_FIVE.throwException();
         }
+    }
+
+    private static Integer toNumber(String tryCount) {
+        try {
+            return Integer.parseInt(tryCount);
+        } catch (NumberFormatException numberFormatException) {
+            ExceptionMessage.NOT_INPUT_NUMBER.throwException();
+        }
+
+        return null;
     }
 }
