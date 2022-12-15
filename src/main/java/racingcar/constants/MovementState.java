@@ -11,6 +11,10 @@ public enum MovementState {
         this.movement = movement;
     }
 
+    public int getMovement() {
+        return movement;
+    }
+
     public static MovementState getMovementState(int number) {
         if (MINIMUM_FOR_MOVEMENT <= number) {
             return GO;
