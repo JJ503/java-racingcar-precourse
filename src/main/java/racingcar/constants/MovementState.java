@@ -4,7 +4,7 @@ public enum MovementState {
     GO(1),
     STOP(0);
 
-    private static int MINIMUM_FOR_MOVEMENT = 4;
+    private static final int MINIMUM_FOR_MOVEMENT = 4;
     private final int movement;
 
     MovementState(int movement) {
