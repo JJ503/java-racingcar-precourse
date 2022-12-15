@@ -12,4 +12,12 @@ public class Car {
     public void addPosition(MovementState movementState) {
         position += movementState.getMovement();
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPosition() {
+        return position;
+    }
 }
