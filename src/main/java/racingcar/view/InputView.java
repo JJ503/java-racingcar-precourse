@@ -13,11 +13,25 @@ public class InputView {
 
     public List<String> readRacingCarNames() {
         System.out.println(INPUT_RACING_CAR_NAMES);
-        return InputValidation.validateCarNames(Console.readLine());
+        try {
+            return InputValidation.validateCarNames(Console.readLine());
+        } catch (IllegalArgumentException exception) {
+            System.out.println(exception.getMessage());
+            readRacingCarNames();
+        }
+
+        return null;
     }
 
     public Integer readRacingTryCount() {
         System.out.println(INPUT_RACING_TRY_COUNT);
-        return InputValidation.validateTryCount(Console.readLine());
+        try {
+            return InputValidation.validateTryCount(Console.readLine());
+        } catch (IllegalArgumentException exception) {
+            System.out.println(exception.getMessage());
+            readRacingTryCount();
+        }
+
+        return null;
     }
 }
