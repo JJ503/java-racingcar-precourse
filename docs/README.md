@@ -121,7 +121,7 @@
 
 ### RacingCarConstants
 
-> 레이싱 게임에 반복적으로 사용되는 상수들을 모아둔 클래스
+> 레이싱 게임에서 전진 혹은 멈추에 대한 상수들을 모아둔 enum 클래스
 
 
 ### ExceptionMessage
