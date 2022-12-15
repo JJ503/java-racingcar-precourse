@@ -28,4 +28,8 @@ public class Car {
     public List<Object> getCarInformation() {
         return Arrays.asList(name, position);
     }
+
+    public boolean isEqualPosition(int position) {
+        return this.position == position;
+    }
 }
