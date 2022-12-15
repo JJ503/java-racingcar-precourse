@@ -3,7 +3,9 @@ package racingcar.model;
 import racingcar.util.GoOrStopValueGenerator;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Cars {
     private static final int ONE = 1;
@@ -26,5 +28,29 @@ public class Cars {
         }
 
         return result;
+    }
+
+    public List<String> getWinner() {
+        if (cars.size() == ONE) {
+            return cars.stream()
+                    .map(Car::getName)
+                    .collect(Collectors.toList());
+        }
+
+        int winningPosition = sortedCarByPosition().get(0).getPosition();
+        return getSamePositionCars(winningPosition);
+    }
+
+    private List<Car> sortedCarByPosition() {
+        return cars.stream()
+                .sorted(Comparator.comparingInt(Car::getPosition).reversed())
+                .collect(Collectors.toList());
+    }
+
+    private List<String> getSamePositionCars(int winningPosition) {
+        return cars.stream()
+                .filter(car -> car.isEqualPosition(winningPosition))
+                .map(Car::getName)
+                .collect(Collectors.toList());
     }
 }
