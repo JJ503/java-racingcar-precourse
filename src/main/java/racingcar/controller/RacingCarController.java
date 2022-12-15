@@ -36,8 +36,13 @@ public class RacingCarController {
     }
 
     private void tryRacingByTryCount(int tryCount, Cars cars) {
+        outputView.printStartGameMessage();
+
         for (int count = 0; count < tryCount; count++) {
             cars.tryRacingOnce();
+            outputView.printTryResult(cars.getResult());
         }
+
+        outputView.printWinners(cars.getWinner());
     }
 }
