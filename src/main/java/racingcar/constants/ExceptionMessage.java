@@ -1,7 +1,8 @@
 package racingcar.constants;
 
 public enum ExceptionMessage {
-    NONE_INPUT("값을 입력해 주시길 바랍니다.");
+    NONE_INPUT("값을 입력해 주시길 바랍니다."),
+    INPUT_NAME_MORE_THAN_FIVE("자동차 이름의 길이는 5자 이하만 입력해 주시길 바랍니다.");
 
     private final String exceptionMessage;
 
