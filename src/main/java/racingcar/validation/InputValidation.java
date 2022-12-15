@@ -7,8 +7,11 @@ import java.util.List;
 
 public class InputValidation {
     private static final String COMMA = ",";
+    private static final String SPACE = " ";
+    private static final String NONE = "";
 
     public static List<String> validateCarNames(String names) {
+        names = names.replace(SPACE, NONE);
         isExist(names);
         List<String> carNames = toList(names);
         areAllNamesMoreThanFive(carNames);
