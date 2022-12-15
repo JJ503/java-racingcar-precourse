@@ -13,6 +13,7 @@ public class RacingCarController {
 
     public void startRacingGame() {
         Cars cars = initRacingCarNames();
+        int tryCount = initTryCount();
     }
 
     private Cars initRacingCarNames() {
@@ -27,5 +28,9 @@ public class RacingCarController {
         }
 
         return cars;
+    }
+
+    private int initTryCount() {
+        return inputView.readRacingTryCount();
     }
 }
